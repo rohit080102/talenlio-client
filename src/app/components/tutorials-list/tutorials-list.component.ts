@@ -19,6 +19,7 @@ export class TutorialsListComponent implements OnInit {
   currentIndex = -1;
   title = '';
   JSON: any;
+  limit: any;
 
   constructor(private tutorialService: TutorialService,
 
@@ -47,6 +48,9 @@ export class TutorialsListComponent implements OnInit {
         next: (data) => {
           this.tutorials = data;
           console.log(data);
+          if (this.tutorials.length > 10) {
+
+          }
         },
         error: (e) => console.error(e)
       });
